@@ -1,67 +1,28 @@
-#lib-control-type-for-convert [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lebretr/lib-control-type-for-convert/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Build Status](https://travis-ci.org/lebretr/lib-control-type-for-convert.svg)](https://travis-ci.org/lebretr/lib-control-type-for-convert) [![Dependency Status](https://david-dm.org/lebretr/lib-control-type-for-convert.png)](https://david-dm.org/lebretr/lib-control-type-for-convert)
+#backend-generix-helpers
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lebretr/backend-generix-helpers/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/adeo-proxideco/backend-generix-helpers.svg)](https://travis-ci.org/adeo-proxideco/backend-generix-helpers)
+[![Dependency Status](https://david-dm.org/adeo-proxideco/backend-generix-helpers.svg)](https://david-dm.org/adeo-proxideco/backend-generix-helpers)
+[![Code Climate](https://codeclimate.com/github/adeo-proxideco/backend-generix-helpers/badges/gpa.svg)](https://codeclimate.com/github/adeo-proxideco/backend-generix-helpers)
+[![Test Coverage](https://codeclimate.com/github/adeo-proxideco/backend-generix-helpers/badges/coverage.svg)](https://codeclimate.com/github/adeo-proxideco/backend-generix-helpers)
 
 
 __About__
 ===========
 
-Helper for test a data before convert in simple type
+Helper for lib backend-generix
 
 
 __Install__
 ===========
 ```
-npm install lib-control-type-for-convert
+npm install backend-generix-helpers
 ```
 
 __Exemples__
 ===========
-```
-var _={};
-    _.ctrl=require('lib-control-type-for-convert');
-    
-_.ctrl.isString('foo') 
-=> true
-
-_.ctrl.isString('     ') 
-=> false
-
-_.ctrl.isNotEmpty('     ') 
-=> false
-
-_.ctrl.isInteger('51') 
-=> true
-
-...
-```
 
 __Results__
 ===========
-
-| **Exemplex**     | **isString()** | **isInteger()** | **isNumber()** | **isBoolean()** | **isNotEmpty**
-|:-----------------|:---------------|:----------------|:---------------|:----------------|:-------------
-|'    '            | true	        |                 |                |                 | 
-|''                | true	        |                 |                |                 | 
-|'test'            | true	        |                 |                |                 | true
-|'123'             | true	        | true            | true           |                 | true
-| 123              |    	        | true            | true           |                 | true
-|'123.43'          | true	        |                 | true           |                 | true
-| 123.43           |     	        |                 | true           |                 | true
-|'123,43'          | true	        |                 |                |                 | true
-|'true'            | true	        |                 |                | true            | true
-| true             |     	        |                 |                | true            | true
-|'false'           | true	        |                 |                | true            | true
-| false            |     	        |                 |                | true            | true
-| null             |     	        |                 |                |                 | 
-| undefined        |     	        |                 |                |                 | 
-| NaN              |     	        |                 |                |                 | 
-|'{}'              | true	        |                 |                |                 | true
-| {}               |     	        |                 |                |                 | true
-|'[]'              | true	        |                 |                |                 | true
-| []               |     	        |                 |                |                 | 
-|'function(){}'    | true	        |                 |                |                 | true
-| function(){}     |     	        |                 |                |                 | true
-
-
 
 __License__
 ===========
