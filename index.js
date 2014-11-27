@@ -147,7 +147,7 @@ var valueof = exports.valueof = function(a, b){
 					}
 				}else{
 					if(a[ch].$.name === nm){
-							a=a[ch];
+						a=a[ch];
 					}else{
 						return null;
 					}
@@ -275,8 +275,8 @@ var convAttributToBoolean = exports.convAttributToBoolean = function(data, lst){
 // /**
 // *	recherche dans tout le fluxXml si une cle existe
 // *
-// *   parametre 1: tableau de donnee
-// *	parametre2: la clé a rechercher
+// *   	parametre 1: tableau de donnee
+// *   	parametre 2: la clé a rechercher
 // *
 // *	exemple:
 // *	a={

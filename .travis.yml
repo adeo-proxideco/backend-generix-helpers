@@ -20,7 +20,7 @@ cache:
 
 addons:
   code_climate:
-    repo_token: 13d4d2c10cca65ba30dc5941a733a5432472d3480a648a795c22a9a135f143c6
+    repo_token: 11d1bd7cef26b41b6b0d48f8d3da6b2c466e22229e794226ef6cc8a77cdb297e
 
 after_script:
   - cat ./coverage/lcov.info | codeclimate
