@@ -1,0 +1,6 @@
+# Declare files that will always have CRLF line endings on checkout.
+*.js text eol=lf
+*.sh text eol=lf
+*.bat text eol=lf
+*.sql text eol=lf
+*.dic text eol=lf

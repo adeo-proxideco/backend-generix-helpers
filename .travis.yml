@@ -1,0 +1,26 @@
+script:
+  - "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
+
+notifications:
+  email:
+    - lebretr@gmail.com
+
+language: node_js
+
+node_js:
+  - "0.10"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  code_climate:
+    repo_token: 13d4d2c10cca65ba30dc5941a733a5432472d3480a648a795c22a9a135f143c6
+
+after_script:
+  - cat ./coverage/lcov.info | codeclimate
