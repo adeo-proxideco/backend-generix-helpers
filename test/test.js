@@ -40,6 +40,25 @@ describe('fluxXmlGnxIsOk', function(){
 			}
 		}
 	}
+	var aaa={
+		ResponseStatus: "1",
+		numOrder: "1234567",
+		message: "tout est OK",
+		layout:{
+			user:{
+				error: {
+					object:"address",
+					type:"unable access",
+					_:'qsqsd JBO-25014sss'
+				},
+				nom:'toto', 
+				prenom:'titi',
+				age: " 21   ",
+				marrie: "OUI",
+				celibataire: "no",
+			}
+		}
+	}
 	var b={
 		ResponseStatus: "1",
 		numOrder: "1234567",
@@ -105,6 +124,17 @@ describe('fluxXmlGnxIsOk', function(){
 		it('2.2 - error', function(){
 	      	var tmp=blh.fluxXmlGnxIsOk(null, aa, function(err){ 
 	      		if(!err && err.detail!=''){
+	      			throw (new Error('Error existKey'));
+	      		}
+	      	});
+
+	      	if(tmp != false){
+	      		throw (new Error('Error existKey'));
+	      	}
+		})
+		it('2.3 - error', function(){
+	      	var tmp=blh.fluxXmlGnxIsOk(null, aaa, function(err){ 
+	      		if(!err && err.detail!='qsqsd JBO-25014sss'){
 	      			throw (new Error('Error existKey'));
 	      		}
 	      	});

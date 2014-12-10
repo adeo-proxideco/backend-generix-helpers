@@ -367,10 +367,10 @@ var fluxXmlGnxIsOk = exports.fluxXmlGnxIsOk = function(err, fluxXml, next){
     if(chmErrorInFlux){   
         chmErrorInFlux.push('_');
         var e=valueof(fluxXml, chmErrorInFlux);
-		
-		if(e.indexOf('JBO-25014')>=1 || e.indexOf('Another user has changed the row')>=1){
+
+		if(e && (e.indexOf('JBO-25014')>=1 || e.indexOf('Another user has changed the row')>=1)){
 			var error_flux=new Error('ERR_UPDT_OTHER_USER');
-			error_flux.detail= e || '';
+			error_flux.detail= e;
 			error_flux.code='ERR_CONFLICT';
 			error_flux.ResponseStatus=0;
 			error_flux.HttpCode=409;
