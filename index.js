@@ -364,17 +364,26 @@ var fluxXmlGnxIsOk = exports.fluxXmlGnxIsOk = function(err, fluxXml, next){
     }
                         
     var chmErrorInFlux =whereKey(fluxXml,'error');
-    if(chmErrorInFlux){                        
+    if(chmErrorInFlux){   
         chmErrorInFlux.push('_');
         var e=valueof(fluxXml, chmErrorInFlux);
-
-        var error_flux=new Error('ERR_IN_FLUX');
-        error_flux.detail= e || '';
-        error_flux.code='ERR_GNX';
-        error_flux.ResponseStatus=0;
-        error_flux.HttpCode=500;
-        next(error_flux);
-        return false;
+		
+		if(e.indexOf('JBO-25014')>=1 || e.indexOf('Another user has changed the row')>=1){
+			var error_flux=new Error('ERR_UPDT_OTHER_USER');
+			error_flux.detail= e || '';
+			error_flux.code='ERR_CONFLICT';
+			error_flux.ResponseStatus=0;
+			error_flux.HttpCode=409;
+		}else{
+			var error_flux=new Error('ERR_IN_FLUX');
+			error_flux.detail= e || '';
+			error_flux.code='ERR_GNX';
+			error_flux.ResponseStatus=0;
+			error_flux.HttpCode=500;
+		}
+		
+		next(error_flux);
+		return false;
 
         // res.json({
         //     ResponseStatus: 0,
